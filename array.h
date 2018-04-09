@@ -17,3 +17,4 @@ extern void array_append(extend_array *array, void *element);
 extern void *array_get(extend_array *array, size_t index);
 extern void array_update(extend_array *array, size_t index, void *element);
 extern void array_destroy(extend_array *array);
+extern void *array_pop(extend_array *array);

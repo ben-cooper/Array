@@ -98,3 +98,29 @@ void array_update(extend_array *array, size_t index, void *element) {
 
 	array->contents[index] = element;
 }
+
+void *array_pop(extend_array *array) {
+	void *result;
+
+	/* checking for empty array */
+	if (array->length == 0)
+		return NULL;
+
+	result = array->contents[array->length - 1];
+	array->length--;
+
+	/* checking if resizing should stop */
+	if ((array->resizing) && (array->length < (array->capacity / 4))) {
+		array->resizing = 0;
+		array->capacity /= 2;
+		free(array->extension);
+	}
+
+	/* checking if array should be shrunk */
+	if (array->length < (array->capacity / 4)) {
+		array->contents = realloc(array->contents, (array->capacity / 2));
+		array->capacity /= 2;
+	}
+
+	return result;
+}
