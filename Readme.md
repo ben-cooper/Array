@@ -3,6 +3,7 @@
 ## Specifications
 * Implemented as an array
 * Incrementally resizes
+* Shrinks intelligently
 * Uses generic void pointers
 
 ## Commands
@@ -11,6 +12,7 @@
 * array_get returns the element at the specified index
 * array_update changes the element at the specified index to the specified value
 * array_destroy frees all the memory used by the array
+* array_pop removes and returns the last element of the array
 
 ## Properties
 ### Read Only
