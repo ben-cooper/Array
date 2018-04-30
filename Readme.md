@@ -25,8 +25,8 @@
 	* next is the next element to copy over to the new array when expanding
 
 ## Examples
-<pre>
 
+```c
 #include "array.h"
 
 int main() {
@@ -46,8 +46,7 @@ int main() {
 
 	return 0;
 }
-
-</pre>
+```
 
 ## Algorithm
 * When an array reaches its maximum size, a new array of twice the size of the original is allocated
